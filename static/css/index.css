@@ -1,0 +1,46 @@
+#container_canvas{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar{
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-nav{
+  display: flex;
+  flex-direction: row;
+  flex-basis: 50vw;
+  justify-content: space-around;
+}
+
+.navbar-nav * {
+  width: 120px;
+  text-align: center;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+td{
+  width: 20px;
+  height: 20px;
+}
+
+#container_btns{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  color: white;
+}
+
+#container_btns * {
+    margin-left: 20px;
+    margin-right: 20px;
+}

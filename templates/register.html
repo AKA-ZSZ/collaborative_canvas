@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>login page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="../static/css/register.css">
+</head>
+
+<body>
+  <section id="container">
+    <form action="/register" class="signup" method="post">
+      <h1>Register:</h1>
+      <label for="username">Username:</label>
+      <input name="new_username" type="text" placeholder="Username" class="form-control">
+      <label for="password">Password:</label>
+      <input name="new_password" type="password" placeholder="Password" class="form-control">
+      <input name="v_password" type="password" placeholder="Verify Password" class="form-control">
+      <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+    </form>
+
+      <br>
+      <p><a href="{{url_for('login')}}">Back to login</a></p>
+      <p>{{ error }}</p>
+
+</section>
+
+
+
+
+</body>

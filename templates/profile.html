@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>main page</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="../static/css/profile.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body onload="load('{{username}}')">
+    <section id="container_nav">
+        <nav class="navbar">
+            <ul class="navbar-nav">
+               <li><a href="{{url_for('home')}}">Home</a></li>
+               {% if (g.user.username != '') %}
+               <li><a href="{{url_for('logout')}}">Logout ({{g.user.username}})</a></li>
+               {% else %}
+               <li><a href="{{url_for('register')}}">Signup</a></li>
+               <li><a href="{{url_for('login')}}">Login</a></li>
+               {% endif %}
+            </ul>
+        </nav>
+     </section>
+ 
+    <section id="container_canvas">
+
+        <h1>{{ username }}'s Pixel Canvas</h1>
+        <table id="myCanvas">
+
+        </table>
+    </section>
+
+    <section id="container_btns">
+      <a type="button" class="btn btn-primary btn-lg" onclick="id_color_array('{{username}}')">Save</a>
+      <input type="color" id="cpicker">
+      <a type="button" class="btn btn-primary btn-lg" onclick="wipe()">Wipe</a>
+    </section>
+    
+    <script type="text/javascript" src="{{ url_for('static', filename='profile.js') }}"></script>
+
+</body>
+</html>
